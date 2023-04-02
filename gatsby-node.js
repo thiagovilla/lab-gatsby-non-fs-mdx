@@ -26,3 +26,36 @@ function getFilename(node) {
 function getMarkdown(node) {
   return node.markdown;
 }
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+          id
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild("ERR_QUERY_ALL_MDX");
+    return;
+  }
+
+  const { createPage } = actions;
+  const template = path.resolve("src/templates/blog-post.js");
+  result.data.allMdx.nodes.forEach(node => {
+    createPage({
+      path: "blog/" + node.frontmatter.slug,
+      component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { id: node.id },
+    });
+  });
+};
