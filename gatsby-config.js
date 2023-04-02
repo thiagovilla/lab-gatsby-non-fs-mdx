@@ -15,6 +15,14 @@ module.exports = {
         folder: config.googleDocs.folderId,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: "./content/posts",
+      },
+      __key: "posts",
+    },
     "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",
