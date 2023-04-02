@@ -18,7 +18,11 @@
     "gatsby": "^5.8.1",
     "gatsby-plugin-mdx": "^5.8.0",
     "gatsby-source-filesystem": "^5.8.0",
+    "gatsby-source-google-docs": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }
