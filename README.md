@@ -1,49 +1,15 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Non-fs MDX Gatsby Pages
 
-## 🚀 Quick start
+This laboratory demonstrantes how to programatically create Gatsby pages from non-filesystem sourced MDX content, such as CMSs and cloud storage.
 
-1.  **Create a Gatsby site.**
+This example uses MDX content from Google Docs, but should be easily extendable to other sources.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Context
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+Gatsby MDX plugin `gastby-plugin-mdx`'s latest version currently only compiles MDX from filesystem MDX files sourced via `gatsby-source-filesystem`.
 
-2.  **Start developing.**
+## Installation
 
-    Navigate into your new site’s directory and start it up.
+Please run `npx gatsby-source-google-docs-token` to generate the necessary environment variables for this example.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+You'll also need to add an extra variable `GOOGLE_DOCS_FOLDER_ID` pointing to a Google Docs folder.
